@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-xxl-end py-2">
+  <a href="#" routerLink="/candidate/list" class="btn btn-secondary">
+    &nbsp;Voltar</a>
+</div>
+<form (ngSubmit)="update()" ngNativeValidate>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="firstname">FirstName</label>
+      <input type="text" class="form-control" name="firstname" id="firstname" title="firstName é obrigatório"
+             [readonly]="true"
+             [value]="candidateModel.firstName"
+      >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="lastname">lastname</label>
+      <input type="text" class="form-control" name="lastname" id="lastname" title="lastname é obrigatório"
+             [readonly]="true"
+             [value]="candidateModel.lastName">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-8">
+      <label for="email">E-mail</label>
+      <input type="email" class="form-control" name="email" id="email" title="email é obrigatório"
+             [(ngModel)]="candidateModel.email" [required]="true">
+    </div>
+    <div class="form-group col-md-4">
+
+      <label for="lastname">birthDate</label>
+      <input type="date" name="birthdate" class="form-control" id="birthdate"
+             [value]="transformDate(candidateModel.birthDate)"
+             [readonly]="true"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-7">
+      <label for="document">Documento</label>
+      <input type="text" class="form-control" name="document" maxlength="10" id="document" title="document é obrigatório"
+             [(ngModel)]="candidateModel.document" [required]="true">
+    </div>
+    <div class="form-group col-md-5">
+      <label for="occupation">occupation</label>
+      <input class="form-control" type="text" name="occupation" id="occupation" [(ngModel)]="candidateModel.occupation"
+             [required]="true">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="resume">Curriculo</label>
+    <textarea class="form-control" name="resume" id="resume" [(ngModel)]="candidateModel.resume"
+              [required]="false" rows="3"></textarea>
+  </div>
+  <div class="text-center py-2">
+    <button type="submit" id="save" class="btn btn-success">Atualizar</button>
+  </div>
+</form>

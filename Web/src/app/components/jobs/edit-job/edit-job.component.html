@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-xxl-end py-2">
+  <a href="#" routerLink="/job/list" class="btn btn-secondary">
+    &nbsp;Voltar</a>
+</div>
+<form (ngSubmit)="update()" ngNativeValidate>
+  <div class="form-group">
+    <label for="title">Titulo da vaga</label>
+    <input type="text" class="form-control" name="title" id="title" title="Titulo é obrigatório"
+           [(ngModel)]="jobModel.title" [required]="true">
+  </div>
+  <div class="form-group">
+    <label for="description">Descrição</label>
+    <input type="text" class="form-control" name="description" id="description" title="Descrição é obrigatório"
+           [(ngModel)]="jobModel.description" [required]="true">
+  </div>
+  <div class="form-group">
+    <label for="seniority">Nivel da vaga</label>
+    <input class="form-control" type="text" name="seniority" id="seniority" [(ngModel)]="jobModel.seniority">
+  </div>
+  <div class="form-group">
+    <label for="salary">Salário</label>
+    <input class="form-control" type="text" name="salary" id="salary"
+           title="Precisa ser um valor número" [(ngModel)]="jobModel.salary" [required]="true" (blur)="this.transformAmount(jobModel.salary)">
+  </div>
+  <div class="text-center py-2">
+    <button type="submit" id="save" class="btn btn-success">Atualizar</button>
+  </div>
+</form>

@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-xxl-end py-2">
+  <button class="btn btn-success" (click)="createJob()">
+    Cadastrar vaga
+  </button>
+</div>
+<table class="table align-middle mb-0 bg-white">
+  <thead class="bg-light">
+  <tr>
+    <th>Título da Vaga</th>
+    <th>Senioridade</th>
+    <th>Salário</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let jobResponse of jobListResponse">
+    <td>{{ jobResponse.title }}</td>
+    <td>{{ jobResponse.seniority }}</td>
+    <td>{{ this.transformAmount(jobResponse.salary) }}</td>
+    <td>
+      <a href="#" [routerLink]="['/job/edit', jobResponse.id]" class="btn">
+        <i class="fa fa-edit edit"></i>
+      </a>
+      <button type="button" (click)="deleteJob(jobResponse.id)" class="btn">
+        <i class='fas fa-trash-alt delete'></i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

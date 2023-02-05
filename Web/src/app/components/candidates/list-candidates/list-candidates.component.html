@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-xxl-end py-2">
+  <button class="btn btn-success" (click)="createCandidate()">
+    Cadastrar candidatos
+  </button>
+</div>
+<table class="table align-middle mb-0 bg-white">
+  <thead class="bg-light">
+  <tr>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>E-mail</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let candidateResponse of candidateListResponse">
+    <td>{{ candidateResponse.id }}</td>
+    <td>{{ candidateResponse.firstName }} {{ candidateResponse.lastName }}</td>
+    <td>{{ candidateResponse.email }}</td>
+    <td>
+      <a href="#" [routerLink]="['/candidate/edit', candidateResponse.id]" class="btn">
+        <i class="fa fa-edit edit"></i>
+      </a>
+      <button type="button" (click)="deleteCandidate(candidateResponse.id)" class="btn">
+        <i class='fas fa-trash-alt delete'></i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
