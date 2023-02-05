@@ -1,0 +1,112 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "Hashids.net/1.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Hashids.net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Hashids.net.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Hashids.net/1.6.1": {
+      "sha512": "RofSPjW076KWPaxCo/BOB56+lq04P0IvmFV4YtQ+agq+UXwEta269JHRhUX40SBgsRyt49s850weKfQIxeomgw==",
+      "type": "package",
+      "path": "hashids.net/1.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "hashids.net.1.6.1.nupkg.sha512",
+        "hashids.net.nuspec",
+        "hashids.png",
+        "lib/net5.0/Hashids.net.dll",
+        "lib/net5.0/Hashids.net.xml",
+        "lib/net6.0/Hashids.net.dll",
+        "lib/net6.0/Hashids.net.xml",
+        "lib/netstandard2.0/Hashids.net.dll",
+        "lib/netstandard2.0/Hashids.net.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "Hashids.net >= 1.6.1"
+    ]
+  },
+  "packageFolders": {
+    "/home/wsferreira/.nuget/packages/": {},
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/wsferreira/projetos/ATS/ATSControlSystem/ATSControlSystem.Domain/ATSControlSystem.Domain.csproj",
+      "projectName": "ATSControlSystem.Domain",
+      "projectPath": "/home/wsferreira/projetos/ATS/ATSControlSystem/ATSControlSystem.Domain/ATSControlSystem.Domain.csproj",
+      "packagesPath": "/home/wsferreira/.nuget/packages/",
+      "outputPath": "/home/wsferreira/projetos/ATS/ATSControlSystem/ATSControlSystem.Domain/obj/",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "/home/wsferreira/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "Hashids.net": {
+            "target": "Package",
+            "version": "[1.6.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.405/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

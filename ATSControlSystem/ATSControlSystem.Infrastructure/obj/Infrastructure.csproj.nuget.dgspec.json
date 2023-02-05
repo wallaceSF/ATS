@@ -1,0 +1,140 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\projetos\\ATSControlSystem\\Infrastructure\\Infrastructure.csproj": {}
+  },
+  "projects": {
+    "C:\\projetos\\ATSControlSystem\\ATSControlSystem.Domain\\ATSControlSystem.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\projetos\\ATSControlSystem\\ATSControlSystem.Domain\\ATSControlSystem.Domain.csproj",
+        "projectName": "ATSControlSystem.Domain",
+        "projectPath": "C:\\projetos\\ATSControlSystem\\ATSControlSystem.Domain\\ATSControlSystem.Domain.csproj",
+        "packagesPath": "C:\\Users\\wallace.ferreira.STONE\\.nuget\\packages\\",
+        "outputPath": "C:\\projetos\\ATSControlSystem\\ATSControlSystem.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\NuGet.Config",
+          "C:\\Users\\wallace.ferreira.STONE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Hashids.net": {
+              "target": "Package",
+              "version": "[1.6.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\projetos\\ATSControlSystem\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\projetos\\ATSControlSystem\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "C:\\projetos\\ATSControlSystem\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\wallace.ferreira.STONE\\.nuget\\packages\\",
+        "outputPath": "C:\\projetos\\ATSControlSystem\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\NuGet.Config",
+          "C:\\Users\\wallace.ferreira.STONE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\projetos\\ATSControlSystem\\ATSControlSystem.Domain\\ATSControlSystem.Domain.csproj": {
+                "projectPath": "C:\\projetos\\ATSControlSystem\\ATSControlSystem.Domain\\ATSControlSystem.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.19.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

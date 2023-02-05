@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ucerAvuhJnLD16IGRDsAZeA6Ubsijvj7fwt6khrv82CYesDQmW5Z5ObHPRtT0udbWpce7x0H0aWXwdYODPIrog==",
+  "success": true,
+  "projectFilePath": "/home/wsferreira/projetos/ATS/ATSControlSystem/ATSControlSystem.Domain/ATSControlSystem.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/wsferreira/.nuget/packages/hashids.net/1.6.1/hashids.net.1.6.1.nupkg.sha512"
+  ],
+  "logs": []
+}
