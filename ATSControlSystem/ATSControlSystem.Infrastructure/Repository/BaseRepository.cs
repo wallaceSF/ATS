@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ATSControlSystem.Domain.Entity;
+﻿using ATSControlSystem.Domain.Entity;
 using MongoDB.Driver;
 
 namespace ATSControlSystem.Infrastructure.Repository

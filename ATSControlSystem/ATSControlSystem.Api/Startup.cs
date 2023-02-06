@@ -55,7 +55,7 @@ namespace ATSControlSystem.Api
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             var sp = services.BuildServiceProvider();
-            GlobalMapper.Mapper = sp.GetService<IMapper>();
+            GlobalMapper.Mapper = sp.GetService<IMapper>() ?? throw new Exception("error loading globalMapper");
         }
 
         private static void SetupRepository(IServiceCollection services)
@@ -104,8 +104,8 @@ namespace ATSControlSystem.Api
 
             app.UseExceptionHandler(c => c.Run(async context =>
             {
-                var exception = context.Features.Get<IExceptionHandlerPathFeature>().Error;
-                var response = new { exception.Message };
+                var exception = context.Features.Get<IExceptionHandlerPathFeature>()?.Error;
+                var response = new { exception?.Message };
 
                 context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
 
