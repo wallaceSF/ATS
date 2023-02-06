@@ -1,4 +1,6 @@
-﻿namespace ATSControlSystem.Domain.Exceptions
+﻿using System;
+
+namespace ATSControlSystem.Domain.Exceptions
 {
     public class PreconditionFailedException : DomainException
     {

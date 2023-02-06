@@ -1,4 +1,6 @@
-﻿namespace ATSControlSystem.Application.Models.Response;
+﻿using System;
+
+namespace ATSControlSystem.Application.Models.Response;
 
 public class GetCandidateResponseDto
 {

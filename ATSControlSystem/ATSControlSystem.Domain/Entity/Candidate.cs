@@ -1,4 +1,5 @@
-﻿using ATSControlSystem.Domain.Contract.Application;
+﻿using System;
+using ATSControlSystem.Domain.Contract.Application;
 
 namespace ATSControlSystem.Domain.Entity;
 

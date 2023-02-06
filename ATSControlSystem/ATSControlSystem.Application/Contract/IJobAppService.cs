@@ -1,4 +1,5 @@
-﻿using ATSControlSystem.Application.Models.Request;
+﻿using System.Collections.Generic;
+using ATSControlSystem.Application.Models.Request;
 using ATSControlSystem.Application.Models.Response;
 
 namespace ATSControlSystem.Application.Contract;
