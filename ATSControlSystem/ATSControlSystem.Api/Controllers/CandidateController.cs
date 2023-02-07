@@ -2,6 +2,7 @@ using ATSControlSystem.Application.Contract;
 using ATSControlSystem.Application.Extensions;
 using ATSControlSystem.Application.Models.Request;
 using ATSControlSystem.Api.Models;
+using ATSControlSystem.Api.Models.Request;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ATSControlSystem.Api.Controllers;

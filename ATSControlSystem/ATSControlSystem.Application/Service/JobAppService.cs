@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using ATSControlSystem.Application.Extensions;
-using ATSControlSystem.Application.Models;
+﻿using ATSControlSystem.Application.Extensions;
 using ATSControlSystem.Application.Contract;
 using ATSControlSystem.Application.Models.Request;
 using ATSControlSystem.Application.Models.Response;

@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+ dotnet31:
+   restart: always 
+   environment:
+     - ASPNETCORE_ENVIRONMENT=Development 
+     - ASPNETCORE_URLS=http://+:5196
+     - ATS_ApiSettings__MongoSettings__ConnectionString=tyrytrty,
+     - ATS_ApiSettings__MongoSettings__DatabaseName=iuyiuyiuyiuyiuyiuoooooo,
+     - ATS_ApiSettings__SeqSettings__Url=iuyiuyiuyiuyiuyiuoooooo
+   build:
+     context: ./
+     dockerfile: Dockerfile     
+   container_name: dotnet31
+   tty: true   
+   volumes:
+     - ./:/app
+   ports:
+     - "5196:5196"
+     - "5000:5000"
+   networks:
+     - monitoramento-network
+networks: 
+    monitoramento-network:
+      driver: bridge

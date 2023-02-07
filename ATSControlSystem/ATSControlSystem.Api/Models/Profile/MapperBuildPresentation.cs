@@ -1,4 +1,5 @@
-﻿using ATSControlSystem.Application.Models.Request;
+﻿using ATSControlSystem.Api.Models.Request;
+using ATSControlSystem.Application.Models.Request;
 using ATSControlSystem.Application.Models.Response;
 using ATSControlSystem.Domain.Entity;
 

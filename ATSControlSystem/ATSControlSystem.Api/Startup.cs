@@ -1,5 +1,6 @@
 using System.Net;
 using System.Reflection;
+using ATSControlSystem.Api.Models;
 using ATSControlSystem.Application.Contract;
 using ATSControlSystem.Application.Extensions;
 using ATSControlSystem.Application.Service;
@@ -30,13 +31,15 @@ namespace ATSControlSystem.Api
             services.AddControllers();
             services.AddSwaggerGen();
 
+            var settings = new ApiSettings();
+            Configuration.GetSection("ApiSettings").Bind(settings);
+
             SetupAutoMapper(services);
-            SetupRepository(services);
+            SetupRepository(services, settings.MongoSettings);
             SetupServices(services);
             services.Configure<ApiBehaviorOptions>(opt => { opt.SuppressModelStateInvalidFilter = true; });
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-
         }
 
         private static void SetupServices(IServiceCollection services)
@@ -52,12 +55,13 @@ namespace ATSControlSystem.Api
             GlobalMapper.Mapper = sp.GetService<IMapper>() ?? throw new Exception("error loading globalMapper");
         }
 
-        private static void SetupRepository(IServiceCollection services)
+        private static void SetupRepository(IServiceCollection services, MongoSettings mongoSettings)
         {
-            var client = new MongoClient("mongodb://localhost:27017/Wallets-api?maxIdleTimeMS=30000");
+            var connectionString = $"{mongoSettings.ConnectionString}/{mongoSettings.DatabaseName}?maxIdleTimeMS=30000";
+            var client = new MongoClient(connectionString);
 
-            var collection = client.GetDatabase("Wallets-api");
-            
+            var collection = client.GetDatabase(mongoSettings.DatabaseName);
+
             BsonClassMap.RegisterClassMap<Candidate>(cm =>
             {
                 cm.AutoMap();
@@ -68,10 +72,9 @@ namespace ATSControlSystem.Api
 
             services.AddSingleton<IMongoCollection<Job>>(collection.GetCollection<Job>("Job"));
             services.AddSingleton<IJobRepository, JobRepository>();
-            
+
             services.AddSingleton<IMongoCollection<Candidate>>(collection.GetCollection<Candidate>("Candidate"));
             services.AddSingleton<ICandidateRepository, CandidateRepository>();
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,7 +86,7 @@ namespace ATSControlSystem.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            
+
             app.UseCors(x => x
                 .AllowAnyMethod()
                 .AllowAnyHeader()
@@ -105,7 +108,6 @@ namespace ATSControlSystem.Api
 
                 await context.Response.WriteAsJsonAsync(response);
             }));
-
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
