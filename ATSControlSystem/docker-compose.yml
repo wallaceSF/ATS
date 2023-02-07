@@ -1,26 +1,52 @@
 version: '3'
 
 services:
- dotnet31:
-   restart: always 
-   environment:
-     - ASPNETCORE_ENVIRONMENT=Development 
-     - ASPNETCORE_URLS=http://+:5196
-     - ATS_ApiSettings__MongoSettings__ConnectionString=tyrytrty,
-     - ATS_ApiSettings__MongoSettings__DatabaseName=iuyiuyiuyiuyiuyiuoooooo,
-     - ATS_ApiSettings__SeqSettings__Url=iuyiuyiuyiuyiuyiuoooooo
-   build:
-     context: ./
-     dockerfile: Dockerfile     
-   container_name: dotnet31
-   tty: true   
-   volumes:
-     - ./:/app
-   ports:
-     - "5196:5196"
-     - "5000:5000"
-   networks:
-     - monitoramento-network
-networks: 
-    monitoramento-network:
-      driver: bridge
+  dotnet31:
+    restart: always
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5196
+      - ATS_ApiSettings__MongoSettings__ConnectionString=mongodb://mongov2:27017
+      - ATS_ApiSettings__MongoSettings__DatabaseName=ATSdb
+      - ATS_ApiSettings__SeqSettings__Url=http://seqv2:80
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: dotnet31
+    tty: true
+    volumes:
+      - ./:/app
+    ports:
+      - "5196:5196"
+      - "5000:5000"
+    networks:
+      - monitoramento-network    
+  mongov2:
+    image: mongo:3.6
+    container_name: mongo
+    restart: always
+    volumes:
+      - mongodb:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - monitoramento-network
+  seqv2:
+    image: datalust/seq
+    container_name: seq
+    restart: always
+    volumes:
+      - seqDb:/data
+    ports:
+      - "5341:80"
+    environment:
+      - ACCEPT_EULA=Y
+networks:
+  monitoramento-network:
+    driver: bridge
+    
+volumes:
+    mongodb:
+        driver: "local"
+    seqDb:
+        driver: "local"    

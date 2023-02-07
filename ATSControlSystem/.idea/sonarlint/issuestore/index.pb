@@ -71,3 +71,9 @@ RATSControlSystem.Application/Models/Validator/Request/CreateJobRequestValidator
 [ATSControlSystem.Application/Models/Validator/Request/UpdateCandidateRequestDtoValidator.cs,3\f\3f81f25e114ce3f0bbb500e460151ac6d2449dde
 ‚
 RATSControlSystem.Application/Models/Validator/Request/UpdateJobRequestValidator.cs,5\9\59ac23827b5b1f4004a84e7740b1f8e136568b4f
+e
+5ATSControlSystem.Application/Service/JobAppService.cs,e\4\e4c0be1695543ca14645419323abc77bf6630a8e
+m
+=ATSControlSystem.Application.Tests/Common/AutoMapperHelper.cs,6\5\657a7e1042a53be29026bbdbde6f2584ae65f4cb
+u
+EATSControlSystem.Application.Tests/Service/CandidateAppServiceTest.cs,7\8\786b7832e8b996bd197825f71c45e7066d0bb381
