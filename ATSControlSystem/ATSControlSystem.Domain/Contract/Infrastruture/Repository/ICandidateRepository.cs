@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ATSControlSystem.Domain.Entity;
+﻿using ATSControlSystem.Domain.Entity;
 
 namespace ATSControlSystem.Domain.Contract.Infrastruture.Repository;
 

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ATSControlSystem.Domain.Exceptions
+﻿namespace ATSControlSystem.Domain.Exceptions
 {
     public class PreconditionFailedException : DomainException
     {

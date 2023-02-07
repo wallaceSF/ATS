@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using HashidsNet;
+﻿using HashidsNet;
 
 namespace ATSControlSystem.Domain.Entity;
 
@@ -11,7 +8,7 @@ public class BaseEntity
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime UpdatedAt { get; set; }
 
     protected static class Code
     {

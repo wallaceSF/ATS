@@ -30,6 +30,8 @@ namespace ATSControlSystem.Infrastructure.Repository
                 IsUpsert = true
             };
             
+            document.UpdatedAt = DateTime.UtcNow;
+            
             return _mongoContext.FindOneAndReplace<TDocument>(u => u.Id == document.Id, document, options);
         }
         

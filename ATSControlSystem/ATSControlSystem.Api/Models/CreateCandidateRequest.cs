@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ATSControlSystem.Api.Models;
+﻿namespace ATSControlSystem.Api.Models;
 
 public class CreateCandidateRequest
 {
