@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  dotnet31:
+  dotnet6:
     restart: always
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -12,7 +12,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    container_name: dotnet31
+    container_name: dotnet6
     tty: true
     volumes:
       - ./:/app
@@ -41,6 +41,8 @@ services:
       - "5341:80"
     environment:
       - ACCEPT_EULA=Y
+    networks:
+      - monitoramento-network  
 networks:
   monitoramento-network:
     driver: bridge

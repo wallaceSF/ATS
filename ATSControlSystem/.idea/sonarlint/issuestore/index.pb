@@ -63,3 +63,35 @@ m
 =ATSControlSystem.Application.Tests/Common/AutoMapperHelper.cs,6\5\657a7e1042a53be29026bbdbde6f2584ae65f4cb
 u
 EATSControlSystem.Application.Tests/Service/CandidateAppServiceTest.cs,7\8\786b7832e8b996bd197825f71c45e7066d0bb381
+a
+1ATSControlSystem.Api/appsettings.Development.json,7\b\7b13c319231dba13a68fc27e9a4893e1886b0c4e
+Z
+*ATSControlSystem.Api/Models/ApiSettings.cs,7\8\782bc230f8fd895d42cb7aa27769a486ac99e78b
+c
+3ATSControlSystem.Api/Properties/launchSettings.json,d\8\d8035799ab048399c59bc55b17cdc4b2c51fb663
+U
+%ATSControlSystem.Api/appsettings.json,6\6\668100df6cc03862cbe387281185542a6bcbe687
+m
+=ATSControlSystem.Application/Contract/ICandidateAppService.cs,7\8\78bbe7adf9a780f8ffd71b577b71514ea6925848
+m
+=ATSControlSystem.Api/Models/Request/CreateCandidateRequest.cs,e\7\e7807b779412f45e9a038e29e02f153993293c7b
+g
+7ATSControlSystem.Api/Models/Request/CreateJobRequest.cs,6\7\67facc5798dc56895d5526bed50d3754fd61ee33
+m
+=ATSControlSystem.Api/Models/Request/UpdateCandidateRequest.cs,5\a\5a1613701c879d30fc05a281c29924bc844ef63a
+a
+1ATSControlSystem.Api/Controllers/JobController.cs,f\f\ffd852b36fcfa82f96951f98628bca3e4de1c1e7
+g
+7ATSControlSystem.Api/Models/Request/UpdateJobRequest.cs,f\3\f3b1d1bc7e4c724656dea67aaacdc03db9feb4da
+O
+ATSControlSystem.Api/Program.cs,6\4\6489444a318a9d701e24569f8f71511f267c3e65
+l
+<ATSControlSystem.Infrastructure/Repository/BaseRepository.cs,a\f\af21a849b86802be37aec032e8f36a525ca6ac8e
+k
+;ATSControlSystem.Application/Service/CandidateAppService.cs,e\a\ea5040d6263e852004961c1cf9a50ef6b48c77f1
+O
+ATSControlSystem.Api/Startup.cs,7\1\71c43820bc47e23c4b940f8069ac9379734e5ac7
+o
+?ATSControlSystem.Api/Middleware/RequestResponseLogMiddleware.cs,5\8\58d9cafb84e963c3d9ffa090e091f79e32177742
+g
+7ATSControlSystem.Api/Controllers/CandidateController.cs,2\e\2e42705e2c787c80b87ff96b18d0262e48bad12b
