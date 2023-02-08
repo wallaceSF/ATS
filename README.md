@@ -17,7 +17,7 @@ Para acessar entre na barra de endereço com essa url:
 
 `http://localhost:5196/swagger/index.html` para o back, a api em si
 
-`http://localhost:5341/#/events` Seq - consular os log's
+`http://localhost:5341/#/events` Seq - consultar os log's
 
 ## Dúvidas
 Qualquer dúvida entre em contato com wallace.sf87@gmail.com
