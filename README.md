@@ -3,7 +3,7 @@ Antes de tudo tenha instalado em sua máquina o `docker`, `docker-compose` e o `
 
 OBS: dependendo das condições da conexão e de sua máquina, esse processo pode levar alguns minutos.
 
-## BUild projeto front
+## Build projeto front
 Acessa a pasta `Web` e rode os seguintes comandos
 
 `npm install` instalará as dependência
