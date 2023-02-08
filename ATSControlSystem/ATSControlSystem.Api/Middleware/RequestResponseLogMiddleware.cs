@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
+using Serilog.Context;
+using Serilog.Core;
+using Newtonsoft.Json.Linq;
 
 namespace ATSControlSystem.Api.Middleware
 {
@@ -11,13 +14,27 @@ namespace ATSControlSystem.Api.Middleware
             _next = next;
         }
 
-        public async Task InvokeAsync(HttpContext httpContext)
+        private static object DeserializeAsObject(string json)
+        {
+            return DeserializeAsObjectCore(JToken.Parse(json));
+        }
+
+        private static object DeserializeAsObjectCore(JToken token)
+        {
+            return token.Type switch
+            {
+                JTokenType.Object => token.Children<JProperty>()
+                    .ToDictionary(prop => prop.Name, prop => DeserializeAsObjectCore(prop.Value)),
+                JTokenType.Array => token.Select(DeserializeAsObjectCore).ToList(),
+                _ => ((JValue)token).Value
+            };
+        }
+
+        public async Task InvokeAsync(HttpContext httpContext, Logger logger)
         {
             HttpRequest request = httpContext.Request;
 
             var requestJson = await ReadBodyFromRequest(request);
-
-            Console.WriteLine(requestJson);
 
             HttpResponse response = httpContext.Response;
             var originalResponseBody = response.Body;
@@ -30,6 +47,10 @@ namespace ATSControlSystem.Api.Middleware
             }
             catch (Exception exception)
             {
+                LogContext.PushProperty("RequestBody", DeserializeAsObject(requestJson), true);
+                LogContext.PushProperty("Exception", exception, true);
+
+                logger.Error("Request To ATS");
                 Console.WriteLine(exception);
             }
 
@@ -39,12 +60,19 @@ namespace ATSControlSystem.Api.Middleware
             newResponseBody.Seek(0, SeekOrigin.Begin);
             await newResponseBody.CopyToAsync(originalResponseBody);
 
-            Console.WriteLine(responseBodyText);
+            LogContext.PushProperty("RequestBody", DeserializeAsObject(requestJson), true);
+            LogContext.PushProperty("ResponseBody", DeserializeAsObject(responseBodyText), true);
+
+            logger.Information("Request To ATS");
 
             var contextFeature = httpContext.Features.Get<IExceptionHandlerPathFeature>();
             if (contextFeature != null && contextFeature.Error != null)
             {
                 Exception exception = contextFeature.Error;
+                LogContext.PushProperty("RequestBody", DeserializeAsObject(requestJson), true);
+                LogContext.PushProperty("Exception", exception, true);
+
+                logger.Error("Request To ATS");
                 Console.WriteLine(exception);
             }
         }

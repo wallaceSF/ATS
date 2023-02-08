@@ -14,6 +14,10 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
+using Serilog;
+using Serilog.Context;
+using Serilog.Core;
+using ILogger = Serilog.ILogger;
 
 namespace ATSControlSystem.Api
 {
@@ -39,6 +43,18 @@ namespace ATSControlSystem.Api
             SetupRepository(services, settings.MongoSettings);
             SetupServices(services);
 
+            services.AddScoped<Logger>((prop) =>
+            {
+                Logger logger =new LoggerConfiguration()
+                    //  .MinimumLevel.Warning()
+                    .Enrich.WithProperty("Project", "ATS Control System")
+                    .Enrich.FromLogContext()
+                    .WriteTo.Seq(settings.SeqSettings.Url)
+                    .CreateLogger();
+
+                return logger;
+            });
+            
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
