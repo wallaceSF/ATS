@@ -4,13 +4,13 @@ Antes de tudo tenha instalado em sua máquina o `docker`, `docker-compose` e o `
 OBS: dependendo das condições da conexão e de sua máquina, esse processo pode levar alguns minutos.
 
 ## Build projeto front
-Acessa a pasta `Web` e rode os seguintes comandos
+Acessa a pasta `Web` e execute os seguintes comandos
 
 `npm install` instalará as dependência
 `ng serve` levantará o projeto
 
 ## Build projeto back-end
-Acessa a pasta `ATSControlSystem` e rode os seguinte comando: `docker-compose up`.
+Acessa a pasta `ATSControlSystem` e execute o seguinte comando: `docker-compose up`.
 
 ## Acessando o projeto
 Para acessar entre na barra de endereço com essa url: 
