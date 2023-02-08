@@ -1,5 +1,6 @@
 using System.Net;
 using System.Reflection;
+using ATSControlSystem.Api.Middleware;
 using ATSControlSystem.Api.Models;
 using ATSControlSystem.Application.Contract;
 using ATSControlSystem.Application.Extensions;
@@ -37,7 +38,6 @@ namespace ATSControlSystem.Api
             SetupAutoMapper(services);
             SetupRepository(services, settings.MongoSettings);
             SetupServices(services);
-            services.Configure<ApiBehaviorOptions>(opt => { opt.SuppressModelStateInvalidFilter = true; });
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         }
@@ -98,6 +98,8 @@ namespace ATSControlSystem.Api
             app.UseRouting();
 
             app.UseAuthorization();
+            
+            app.UseMiddleware<RequestResponseLogMiddleware>();
 
             app.UseExceptionHandler(c => c.Run(async context =>
             {

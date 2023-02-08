@@ -1,6 +1,4 @@
 
-m
-=ATSControlSystem.Application/Contract/ICandidateAppService.cs,7\8\78bbe7adf9a780f8ffd71b577b71514ea6925848
 n
 >ATSControlSystem.Api/Models/Profile/MapperBuildPresentation.cs,4\0\4038340086a63a5d6c19d09ac5de8907941253d6
 l
@@ -9,8 +7,6 @@ q
 AATSControlSystem.Infrastructure/Repository/CandidateRepository.cs,9\2\9287ac9d8d70ebe54b50b5f38c07cd95392967e6
 k
 ;ATSControlSystem.Infrastructure/Repository/JobRepository.cs,1\b\1b134b86751b6834ee5ed2ab0cca0bb67876c95b
-a
-1ATSControlSystem.Api/Controllers/JobController.cs,f\f\ffd852b36fcfa82f96951f98628bca3e4de1c1e7
 z
 JATSControlSystem.Domain/Contract/Application/IUpdateCandidateProfileDto.cs,1\2\123775f21635ec490e32d76041fdd3e8cda9f077
 
@@ -35,14 +31,6 @@ _
 /ATSControlSystem.Domain.Tests/Entity/JobTest.cs,6\6\664b1ec50b636fa2dd07c2f123030096fe04dce7
 e
 5ATSControlSystem.Domain.Tests/Entity/CandidateTest.cs,a\c\acc7ba45ecc1163bec2a14e1454b80c9c087fe4c
-m
-=ATSControlSystem.Api/Models/Request/CreateCandidateRequest.cs,e\7\e7807b779412f45e9a038e29e02f153993293c7b
-g
-7ATSControlSystem.Api/Models/Request/CreateJobRequest.cs,6\7\67facc5798dc56895d5526bed50d3754fd61ee33
-m
-=ATSControlSystem.Api/Models/Request/UpdateCandidateRequest.cs,5\a\5a1613701c879d30fc05a281c29924bc844ef63a
-g
-7ATSControlSystem.Api/Models/Request/UpdateJobRequest.cs,f\3\f3b1d1bc7e4c724656dea67aaacdc03db9feb4da
 n
 >ATSControlSystem.Application/Exceptions/ValidationException.cs,f\d\fd59095f9cd5fc72156415819104ed833459c3be
 k

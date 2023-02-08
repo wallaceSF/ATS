@@ -8,5 +8,5 @@ public class UpdateCandidateRequest
 
     public string Document { get; set; }
 
-    public string Resume { get; set; }
+    public string? Resume { get; set; }
 }

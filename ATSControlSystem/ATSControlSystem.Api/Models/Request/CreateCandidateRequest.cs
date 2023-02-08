@@ -14,5 +14,5 @@ public class CreateCandidateRequest
     
     public string Occupation { get; set; }
 
-    public string Resume { get; set; }
+    public string? Resume { get; set; }
 }
