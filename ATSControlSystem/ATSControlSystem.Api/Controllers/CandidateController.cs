@@ -25,11 +25,6 @@ public class CandidateController : ControllerBase
     [ProducesResponseType(404)]
     public IActionResult CreateCandidate([FromBody] CreateCandidateRequest createCandidateRequest)
     {
-        var message = string.Join(" | ", ModelState.Values
-            .SelectMany(v => v.Errors)
-            .Select(e => e.ErrorMessage));
-       var xxxx =message;
-        
         var createCandidateRequestDto = createCandidateRequest.Map<CreateCandidateRequestDto>();
 
         var getCandidateResponseDto = _candidateAppService.Create(createCandidateRequestDto);

@@ -16,7 +16,14 @@ namespace ATSControlSystem.Api.Middleware
 
         private static object DeserializeAsObject(string json)
         {
-            return DeserializeAsObjectCore(JToken.Parse(json));
+            try
+            {
+                return DeserializeAsObjectCore(JToken.Parse(json));
+            }
+            catch (Exception exception)
+            {
+                return (object)json;
+            }
         }
 
         private static object DeserializeAsObjectCore(JToken token)

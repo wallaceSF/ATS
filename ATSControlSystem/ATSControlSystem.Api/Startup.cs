@@ -46,7 +46,6 @@ namespace ATSControlSystem.Api
             services.AddScoped<Logger>((prop) =>
             {
                 Logger logger =new LoggerConfiguration()
-                    //  .MinimumLevel.Warning()
                     .Enrich.WithProperty("Project", "ATS Control System")
                     .Enrich.FromLogContext()
                     .WriteTo.Seq(settings.SeqSettings.Url)
